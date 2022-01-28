@@ -31,13 +31,13 @@ Project about Linux SO permissions.
 	- This script creates a directory called my_dir with permissions 751 in the working directory.
 13. Change group
 	- This script changes the group owner to school for the file hello
-14. Owner and group
+14. Owner and group (file: 100-change_owner_and_group)
 	- This script changes the owner to vincent and the group owner to staff for all the files and directories in the working directory.
-15. Symbolic links
+15. Symbolic links (file: 101-symbolic_link_permissions)
 	- This script changes the owner and the group owner of _hello to vincent and staff respectively. Where the _hello is a symbolic link and is located in the current directory
-16. If only
+16. If only (file: 102-if_only)
 	- This script changes the owner of the file hello to vincent only if it is owned by the user guillaume.
-17. Star Wars
+17. Star Wars (file: 103-Star_Wars)
 	- With this script play the StarWars IV episode in the terminal
 	- Note: For close or stop the animations, press ctrl + ], after write quit in your terminal.
 
