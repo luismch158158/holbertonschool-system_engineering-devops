@@ -1,0 +1,2 @@
+#!bin/bash
+uniq -u /tmp/0x02/list
