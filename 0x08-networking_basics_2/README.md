@@ -8,6 +8,9 @@ This project is about localhost, hosts file and netcat examples.
 		- facebook.com resolves to 8.8.8.8.
 1. Show attached IPs (file: )
 	- Bash script that displays all active IPv4 IPs on the machine it’s executed on.
+2. Port listening on localhost (file: 100-port_listening_on_localhost)
+	- Write a Bash script that listens on port 98 on localhost.
+	- Connecting to localhost on port 98 using telnet and typing some text.
 
 
 
