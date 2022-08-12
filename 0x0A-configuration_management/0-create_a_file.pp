@@ -1,4 +1,3 @@
-#!/usr/bin/pup
 #Using Puppet, create a file in /tmp
 file { 'school':
   ensure  => file,
