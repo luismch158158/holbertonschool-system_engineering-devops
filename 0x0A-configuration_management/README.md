@@ -13,21 +13,17 @@ This project is about Configuration management with Puppet
         - File group is www-data
         - File contains I love Puppet
 <br>
-<br>
-
 1. Install a package (File: `1-install_a_package.pp`)
     - Using Puppet, install flask from pip3.
     - Requirements:
         - Install flask
         - Version must be 2.1.0
 <br>
-<br>
 2. Execute a command (File: `2-execute_a_command.pp`)
     - Using Puppet, create a manifest that kills a process named killmenow.
     - Requirements:
         - Must use the exec Puppet resource
         - Must use pkill
-<br>
 <br>
 
 Author: Luis Manrique (luismanrique158158@gmail.com)
