@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#configure web-02 to be identical to web-01
+
+search="\troot \/var\/www\/html;"
+
+sudo apt -y update
+sudo apt -y upgrade
+sudo apt -y install nginx
+new_header="${search}\n\n\tadd_header X-Served-By $(hostname);"
+sudo sed -i "s/${search}/${new_header}/" /etc/nginx/sites-available/default
+sudo service nginx restart
