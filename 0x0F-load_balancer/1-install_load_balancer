@@ -10,7 +10,7 @@ sudo apt-get install -y haproxy=2.0.\*
 
 server_web01="4274-web-01 52.73.82.123:80"
 server_web02="4274-web-02 54.165.211.232:80"
-front_end="\nfrontend myfrontend\n\tbind 0.0.0.0:80\n\tdefault_backend myservers\n"
+front_end="\nfrontend myfrontend\n\tbind 0.0.0.0:80\n\tmode http\n\tdefault_backend myservers\n"
 
 back_end="\nbackend myservers\n\tbalance roundrobin\n\tserver ${server_web01} check\n\tserver ${server_web02} check\n"
 
