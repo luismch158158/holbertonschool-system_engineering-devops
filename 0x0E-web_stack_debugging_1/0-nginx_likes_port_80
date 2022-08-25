@@ -2,5 +2,5 @@
 # Adding softlink of default file in /etc/nginx/sites-enabled to /etc/nginx/sites-available/default
 
 sudo rm /etc/nginx/sites-enabled/default
-ln -sf /etc/nginx/sites-availae/default /etc/nginx/sites-enabled/default
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
 service nginx restart
