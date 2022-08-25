@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-# Adding softlink of default file in /etc/nginx/sites-enabled to /etc/nginx/sites-available/default
+# Using what you did for task #0, make your fix short and sweet.
 ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
-sudo service nginx restart
+sudo /usr/sbin/nginx -s reload
