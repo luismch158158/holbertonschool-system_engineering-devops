@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Adding softlink of default file in /etc/nginx/sites-enabled to /etc/nginx/sites-available/default
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
