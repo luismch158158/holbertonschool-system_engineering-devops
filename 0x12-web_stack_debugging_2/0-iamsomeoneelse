@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+argument="${1}"
+sudo -su "${argument}" whoami
