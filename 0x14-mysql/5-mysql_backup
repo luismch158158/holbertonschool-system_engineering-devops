@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#This script create MySQL backup, and compressed to a tar.gz archive
+
+passwd="${1}"
+
+date_time=$(date --rfc-3339=date |  awk -F- '{print $3"-"$2"-"$1}')
+
+mysqldump -u root -p"${passwd}" --all-databases > backup.sql
+
+tar -czvf "${date_time}".tar.gz backup.sql  
