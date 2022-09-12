@@ -23,4 +23,4 @@ if __name__ == "__main__":
     print("Employee {:s} is done with tasks({:d}/{:d}):".format(
           response_user.get("name"), long_response_true, long_response))
     for task_done in response_todos_true:
-        print("\t{:s}".format(task_done.get("title")))
+        print("\t {:s}".format(task_done.get("title")))
