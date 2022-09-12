@@ -16,7 +16,7 @@ if __name__ == "__main__":
     response_todos = requests.get(url_todos).json()
 
     with open('./{}.csv'.format(id), 'w', encoding="UTF-8") as f:
-        writer = csv.writer(f)
+        writer = csv.writer(f, quoting=csv.QUOTE_ALL)
         for member in response_todos:
             user_id = id
             username = response_user.get("username")
