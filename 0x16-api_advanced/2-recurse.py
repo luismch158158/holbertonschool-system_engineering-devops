@@ -16,8 +16,6 @@ def recurse(subreddit, hot_list=[]):
     If no results are found for the given subreddit,
     the function should return None
     '''
-    if subreddit is None or type(subreddit) is not str:
-        return
 
     url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
 
