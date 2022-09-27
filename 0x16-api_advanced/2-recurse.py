@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-import requests
 '''
 This script make petitions to the Reddit API
 '''
+
+import requests
 
 header = {
         'User-Agent': 'MyAgentLE',
