@@ -10,7 +10,7 @@ header = {
 }
 
 
-def recurse(subreddit, hot_list=[]):
+def recurse(subreddit, hot_list=[], after="", counter=0):
     '''
     recursive function that queries the Reddit API and returns
     a list containing the titles of all hot articles for a given subreddit.
@@ -18,20 +18,40 @@ def recurse(subreddit, hot_list=[]):
     the function should return None
     '''
 
-    url = 'https://www.reddit.com/r/{}/hot.json'.format(subreddit)
-    response = requests.get(url, headers=header, allow_redirects=False)
+    url = 'https://www.reddit.com/r/{}/hot.json?after={}#'.format(
+                                                            subreddit, after)
 
-    if (response.status_code != 200):
-        return (None)
+    if after is not None:
+        response = requests.get(url, headers=header, allow_redirects=False)
 
-    len_hotlist = len(hot_list)
+        if (response.status_code != 200):
+            return (None)
 
-    data = response.json().get('data')
-    array_elements = data.get('children')
+        data = response.json().get('data')
+        array_elements = data.get('children')
+        after = data.get('after')
 
-    if (len_hotlist != len(array_elements)):
-        new_element = array_elements[len_hotlist].get('data').get('title')
-        hot_list.append(new_element)
-        recurse(subreddit, hot_list)
+        # print()
+        # print()
+        # print()
+        # print('REQUEST N°: {}'.format(counter))
+        # print()
+        # print()
+        # print()
+        # print()
+        appender(hot_list, array_elements, 0)
+        recurse(subreddit, hot_list, after, counter + 1)
 
     return hot_list
+
+
+def appender(hot_list, childrens, counter):
+    '''
+    This function will be append to the list for each request
+    '''
+    if (counter != len(childrens)):
+
+        new_element = childrens[counter].get('data').get('title')
+        # print(new_element)
+        hot_list.append(new_element)
+        appender(hot_list, childrens, counter + 1)
